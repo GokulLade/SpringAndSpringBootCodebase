@@ -10,7 +10,7 @@ public class WishMessageGenerator {
 	{
 		System.out.println("WishMessageGenerator.WishMessageGenerator()");
 	}
-
+	
 	// setter method for setter Injection
 	public void setLt(LocalTime lt) 
 	{

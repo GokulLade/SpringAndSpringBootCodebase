@@ -5,23 +5,16 @@ import java.time.LocalTime;
 public class WishMessageGenerator {
 
 	private LocalTime lt; // HAS-A property
-
-	public WishMessageGenerator() 
-	{
-		System.out.println("WishMessageGenerator.WishMessageGenerator()");
-	}
 	
-	// setter method for setter Injection
+	// Using setter method for setter Injection
 	public void setLt(LocalTime lt) 
 	{
-		System.out.println("WishMessageGenerator.setLt()");
 		this.lt = lt;
 	}
 
-	//business method
+	//Business method
 	public String generateWishMessage(String user) 
 	{
-		System.out.println("WishMessageGenerator.generateWishMessage()");
 
 		// get current hour of the day
 		int hour = lt.getHour();// In 24 hrs format

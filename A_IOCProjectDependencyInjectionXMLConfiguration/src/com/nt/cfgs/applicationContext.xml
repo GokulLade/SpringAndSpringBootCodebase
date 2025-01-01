@@ -8,10 +8,19 @@
     
     <!-- Dependent spring bean configuration -->
     <bean id="ltime" class="java.time.LocalTime" factory-method="now"/>
+    <bean id="ldate" class="java.time.LocalDate" factory-method="now"/>
     
-    <!-- Target spring bean configuration -->
+     <!-- Target spring bean configuration using setter injection -->
     <bean id="wmg" class="com.nt.sbeans.WishMessageGenerator">
     	<property name="lt" ref="ltime"/>
     </bean>
+    
+    <!-- Target spring bean configuration using constructor injection -->
+    <bean id="pdt" class="com.nt.sbeans.PrintingDateAndTime">
+    	<constructor-arg name="lt" ref="ltime"/>
+    	<constructor-arg name="ld" ref="ldate"/>
+    </bean>
+    
+    
 
 </beans>

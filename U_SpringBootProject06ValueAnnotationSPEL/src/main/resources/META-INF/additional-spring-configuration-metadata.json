@@ -1,0 +1,57 @@
+{"properties": [
+  {
+    "name": "menu.dosaPrice",
+    "type": "java.lang.String",
+    "description": "A description for 'menu.dosaPrice'"
+  },
+  {
+    "name": "menu.idlyPrice",
+    "type": "java.lang.String",
+    "description": "A description for 'menu.idlyPrice'"
+  },
+  {
+    "name": "menu.pohaPrice",
+    "type": "java.lang.String",
+    "description": "A description for 'menu.pohaPrice'"
+  },
+  {
+    "name": "hotel.addr",
+    "type": "java.lang.String",
+    "description": "A description for 'hotel.addr'"
+  },
+  {
+    "name": "hotel.contact",
+    "type": "java.lang.String",
+    "description": "A description for 'hotel.contact'"
+  },
+  {
+    "name": "hotel.name",
+    "type": "java.lang.String",
+    "description": "A description for 'hotel.name'"
+  },
+  {
+    "name": "customer.name",
+    "type": "java.lang.String",
+    "description": "A description for 'customer.name'"
+  },
+  {
+    "name": "menu.vadaPavPrice",
+    "type": "java.lang.String",
+    "description": "A description for 'menu.vadaPavPrice'"
+  },
+  {
+    "name": "menu.pohaPrice",
+    "type": "java.lang.String",
+    "description": "A description for 'menu.pohaPrice'"
+  },
+  {
+    "name": "menu.pohaPrice",
+    "type": "java.lang.String",
+    "description": "A description for 'menu.pohaPrice'"
+  },
+  {
+    "name": "menu.pohaPrice",
+    "type": "java.lang.String",
+    "description": "A description for 'menu.pohaPrice'"
+  }
+]}

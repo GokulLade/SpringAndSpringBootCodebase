@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.nt</groupId>
-	<artifactId>U_SpringBootProject06ValueAnnotationSPEL</artifactId>
+	<artifactId>V_SpringBootProject07ConfigurationPropertiesAnnotation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>U_SpringBootProject06ValueAnnotationSPEL</name>
-	<description>Spring Boot Mini Project</description>
+	<name>V_SpringBootProject07ConfigurationPropertiesAnnotation</name>
+	<description>Demo Project</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -44,6 +44,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
 		</dependency>
 	</dependencies>
 

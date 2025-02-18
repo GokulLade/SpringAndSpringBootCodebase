@@ -15,7 +15,7 @@ public class MainClass {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
 		
 		//Getting language code from user
-		@SuppressWarnings("resource")
+		
 		Scanner sc=new Scanner(System.in);
 		
 		System.out.println("Enter the language code");
@@ -40,6 +40,7 @@ public class MainClass {
 		
 		//close IOC container
 		ctx.close();
+		sc.close();
 	}
 
 }

@@ -1,0 +1,32 @@
+#Application Name
+spring:
+   application:
+      name: "V_SpringBootProject07ConfigurationPropertiesAnnotation"
+
+# Person Details
+
+#Simple Values
+per:
+   info:
+      name: "Gokul"
+      addr: "Washim, India"
+      salary: 50000.00
+      #Array Values
+      mobileNo: 
+        - 22222
+        - 33333
+        - 44444
+        - 5555
+      #Collection Values
+      nickName: [Krishna,Ganesh,Om]
+      friends: [Aniket,Vijay,Akash,Rushi]
+      #Map Values <pre>.<propertie>.<key>=<value>
+      idDeatils:
+         adharNo: 432323
+         panNo: 32342
+         voterNo: 23443
+      #Has A Properties Value
+      company:
+         name: "TCS"
+         addr: "Hyderabad"
+         size: 5000

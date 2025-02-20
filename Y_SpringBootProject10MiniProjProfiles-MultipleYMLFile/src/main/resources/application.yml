@@ -1,0 +1,7 @@
+spring:
+   application:
+      name: XSpringBootProject09MiniProjProfiles
+   
+# Activating Profile
+   profiles:
+      active: uat

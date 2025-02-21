@@ -1,10 +1,10 @@
 spring:
    application:
-      name: XSpringBootProject09MiniProjProfiles
+      name: SB09MiniProjectProfiles
    
 # Activating Profile
    profiles:
-      active: dev
+      active: prod
 
 # Uses Default Spring Bean [@Profile({"default}) on MySqlEmployeeDAO]
 #   datasource:

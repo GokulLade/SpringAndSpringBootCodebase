@@ -1,0 +1,73 @@
+spring:
+   application:
+      name: XSpringBootProject09MiniProjProfiles
+   
+# Activating Profile
+   profiles:
+      active: dev
+
+# Uses Default Spring Bean [@Profile({"default}) on MySqlEmployeeDAO]
+#   datasource:
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      url: jdbc:mysql:///SPRINGBOOT01
+#      username: root
+#      password: 9112
+#      type: org.apache.commons.dbcp2.BasicDataSource
+#Child Profile [Reusability]
+#   profiles:
+#      include : prod
+    
+---
+# First Profile Developer[dev]
+spring:
+   config:
+      activate:
+         on-profile: dev
+
+   datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql:///SPRINGBOOT01
+      username: root
+      password: 9112
+      type: org.apache.commons.dbcp2.BasicDataSource
+        
+---
+# Second Profile Production[prod]
+spring:
+   config:
+      activate:
+       on-profile: prod
+
+   datasource:
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      url: jdbc:oracle:thin:@localhost:1521:orcl
+      username: gokul
+      password: 9112
+      type: oracle.ucp.jdbc.PoolDataSourceImpl
+
+---
+# Third Profile Testing[test]
+spring:
+   config:
+      activate:
+         on-profile: test
+   
+   datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql:///SPRINGBOOT01
+      username: root
+      password: 9112
+      type: com.mchange.v2.c3p0.ComboPooledDataSource
+
+---
+# Four Profile User Acceptence Testing[uat]
+spring:
+   config:
+      activate:
+         on-profile: uat
+
+   datasource:
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      url: jdbc:oracle:thin:@localhost:1521:orcl
+      username: gokul
+      password: 9112

@@ -1,5 +1,9 @@
 package com.nt.service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +21,51 @@ public class DoctorServiceImp implements IDoctorService {
 	{
 		Doctor doc=docRepo.save(doctor);
 		return "Doctor object is saved with id value: "+doc.getDocid();
+	}
+	
+	
+	@Override
+	public Long showDoctorCount() 
+	{
+		
+		long count = docRepo.count();
+		
+		return count;
+	}
+	
+
+	@Override
+	public String registerDoctorsAsroup(Iterable<Doctor> list) 
+	{
+		//Storing List of doctor in database using saveAll method
+		Iterable<Doctor> saveAll = docRepo.saveAll(list);
+		
+		//Converting Iterable into StreamAPI and fetch all ids
+		List<Integer> ids = StreamSupport.stream(saveAll.spliterator(), false).map(Doctor::getDocid).collect(Collectors.toList());
+		
+		//Returning the result
+		return ids.size()+"Number of Doctor are saved with the ids: "+ids;
+	}
+	
+	
+	@Override
+	public String checkDoctorAvailabilityById(int id) 
+	{
+		boolean isAvailable = docRepo.existsById(id);
+		
+		return (isAvailable==true)?id+" Id number Doctor is found":"Doctor is not found";
+	}
+	
+	@Override
+	public Iterable<Doctor> findAllDoctors() 
+	{
+		return docRepo.findAll();
+	}
+	
+	@Override
+	public Iterable<Doctor> findAllDoctorsByIds(Iterable<Integer> ids) 
+	{
+		return docRepo.findAllById(ids);
 	}
 
 }

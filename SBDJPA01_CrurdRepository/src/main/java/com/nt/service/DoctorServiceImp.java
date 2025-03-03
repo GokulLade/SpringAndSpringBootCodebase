@@ -1,6 +1,7 @@
 package com.nt.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.nt.entity.Doctor;
+import com.nt.exception.DoctorNotFoundException;
 import com.nt.repository.IDoctorRepo;
 
 @Service("doc-service")
@@ -66,6 +68,48 @@ public class DoctorServiceImp implements IDoctorService {
 	public Iterable<Doctor> findAllDoctorsByIds(Iterable<Integer> ids) 
 	{
 		return docRepo.findAllById(ids);
+	}
+	
+	@Override
+	public Doctor showDoctorById(Integer id) 
+	{
+		Optional<Doctor> opt = docRepo.findById(id);
+		
+		Doctor doc=opt.orElseThrow(()->new DoctorNotFoundException("ID Doctor is not found"));
+		
+		return doc;
+	}
+	
+	
+	@Override
+	public String registerOrUpdateDoctor(Doctor doctor) 
+	{
+		docRepo.save(doctor);
+		return "Doctor is Saved / Updated";
+	}
+	
+	
+	@Override
+	public String updateDoctorDetails(Integer id, Double newIncome, String newQly) 
+	{
+		Optional<Doctor> opt = docRepo.findById(id);
+		
+		if(opt.isPresent())
+		{
+			//Getting Doctor Class Object
+			Doctor doctor = opt.get();
+			
+			//Setting new Data
+			doctor.setIncome(newIncome);
+			doctor.setQly(newQly);
+			
+			//Saving into Database
+			docRepo.save(doctor);
+			
+			return "Doctor details are Updated";
+		}
+		
+		return "Doctor id is not found";
 	}
 
 }

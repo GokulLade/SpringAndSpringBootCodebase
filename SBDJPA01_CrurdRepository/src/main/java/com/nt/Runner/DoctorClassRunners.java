@@ -1,14 +1,9 @@
 package com.nt.Runner;
 
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.nt.entity.Doctor;
 import com.nt.service.IDoctorService;
 
 @Component
@@ -48,7 +43,7 @@ public class DoctorClassRunners implements CommandLineRunner {
 //		}
 		
 		
-		
+//		
 //		try {
 //			
 //			//Storing Doctors in List
@@ -66,11 +61,11 @@ public class DoctorClassRunners implements CommandLineRunner {
 //		{
 //			e.printStackTrace();
 //		}
-		
-		
+//		
+//		
 //		try {
 //			
-//			String msg = docService.checkDoctorAvailabilityById(5);
+//			String msg = docService.checkDoctorAvailabilityById(8);
 //			System.out.println(msg);
 //			
 //		}
@@ -80,49 +75,49 @@ public class DoctorClassRunners implements CommandLineRunner {
 //		}
 		
 		
-		try {
-			
-			Iterable<Doctor> list = docService.findAllDoctors();
-			list.forEach(doc->System.out.println(doc));
-			System.out.println("---------------");
-			
-			list.forEach(doc->System.out.println(doc));
-			System.out.println("---------------");
-			
-			list.forEach(System.out::println);
-			System.out.println("---------------");
-			
-			StreamSupport.stream(list.spliterator(), false).forEach(System.out::println);
-			System.out.println("---------------");
-			
-			long count=StreamSupport.stream(list.spliterator(), false).count();
-			System.out.println("No.of records ::"+count);
-			System.out.println("---------------");
-			
-			Iterable<String> qualification=StreamSupport.stream(list.spliterator(),false).
-												map(Doctor::getQly).
-												collect(Collectors.toList());
-			System.out.println(qualification);
-			System.out.println("---------------");
-			
-			for(Doctor doc:list) 
-			{
-				System.out.println(doc);
-			}
-			System.out.println("---------------");
-		
-			List<Doctor> listl =StreamSupport.stream(list.spliterator(), false).toList();
-			for(int i=0;i<count;++i) 
-			{
-				System.out.println(listl.get(i));
-			}
-			
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-		
+//		try {
+//			
+//			Iterable<Doctor> list = docService.findAllDoctors();
+//			list.forEach(doc->System.out.println(doc));
+//			System.out.println("---------------");
+//			
+//			list.forEach(doc->System.out.println(doc));
+//			System.out.println("---------------");
+//			
+//			list.forEach(System.out::println);
+//			System.out.println("---------------");
+//			
+//			StreamSupport.stream(list.spliterator(), false).forEach(System.out::println);
+//			System.out.println("---------------");
+//			
+//			long count=StreamSupport.stream(list.spliterator(), false).count();
+//			System.out.println("No.of records ::"+count);
+//			System.out.println("---------------");
+//			
+//			Iterable<String> qualification=StreamSupport.stream(list.spliterator(),false).
+//												map(Doctor::getQly).
+//												collect(Collectors.toList());
+//			System.out.println(qualification);
+//			System.out.println("---------------");
+//			
+//			for(Doctor doc:list) 
+//			{
+//				System.out.println(doc);
+//			}
+//			System.out.println("---------------");
+//		
+//			List<Doctor> listl =StreamSupport.stream(list.spliterator(), false).toList();
+//			for(int i=0;i<count;++i) 
+//			{
+//				System.out.println(listl.get(i));
+//			}
+//			
+//		}
+//		catch(Exception e)
+//		{
+//			e.printStackTrace();
+//		}
+//		
 //		
 //		try {
 //			
@@ -141,10 +136,42 @@ public class DoctorClassRunners implements CommandLineRunner {
 //		}
 		
 		
+//		
+//		try {
+//			Doctor doctor = docService.showDoctorById(8);
+//			
+//			System.out.println(doctor);
+//		}
+//		catch(Exception e)
+//		{
+//			e.printStackTrace();
+//		}
 		
 		
-		
-		
+//		try {
+//			
+//			Doctor doctor=new Doctor(7,"Ram","MBBS",45000D);
+//			
+//			String msg = docService.registerOrUpdateDoctor(doctor);
+//			
+//			System.out.println(msg);
+//			
+//		}
+//		catch(Exception e)
+//		{
+//			e.printStackTrace();
+//		}
+
+		try {
+			
+			String msg = docService.updateDoctorDetails(8, 3000D, "MBBS");
+			System.out.println(msg);
+			
+		}
+		catch(Exception e)
+		{
+			
+		}
 		
 	}
 

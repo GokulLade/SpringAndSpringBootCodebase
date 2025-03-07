@@ -162,15 +162,53 @@ public class DoctorClassRunners implements CommandLineRunner {
 //			e.printStackTrace();
 //		}
 
+//		try {
+//			
+//			String msg = docService.updateDoctorDetails(8, 3000D, "MBBS");
+//			System.out.println(msg);
+//			
+//		}
+//		catch(Exception e)
+//		{
+//			
+//		}
+		
+		
+//		try {
+//			
+//			String msg=docService.deleteAllDoctor();
+//			System.out.println(msg);
+//			
+//		}
+//		catch(Exception e)
+//		{
+//			e.printStackTrace();
+//		}
+////		
+		
+//		try {
+//			
+//			String msg = docService.deleteDoctorByIds(Arrays.asList(12,13,14));
+//			
+//			System.out.println(msg);
+//			
+//		}
+//		catch(Exception e)
+//		{
+//			e.printStackTrace();
+//		}
+		
+		
 		try {
 			
-			String msg = docService.updateDoctorDetails(8, 3000D, "MBBS");
+			String msg = docService.deleteDoctorbyId(15);
+			
 			System.out.println(msg);
 			
 		}
 		catch(Exception e)
 		{
-			
+			e.printStackTrace();
 		}
 		
 	}

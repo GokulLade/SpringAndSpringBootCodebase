@@ -111,5 +111,53 @@ public class DoctorServiceImp implements IDoctorService {
 		
 		return "Doctor id is not found";
 	}
+	
+	
+	@Override
+	public String deleteAllDoctor() 
+	{
+		long count=docRepo.count();
+		
+		if(count>0)
+		{
+			docRepo.deleteAll();
+			return count+" number of record are deleted..!";
+		}
+		
+		return "No Record found to delete";
+	}
+	
+	
+	@Override
+	public String deleteDoctorByIds(Iterable<Integer> ids) 
+	{
+		//Getting Object By Ids
+		Iterable<Doctor> list = docRepo.findAllById(ids);
+		long count = StreamSupport.stream(list.spliterator(), false).count();
+		
+		
+		//Delete Records
+		docRepo.deleteAllById(ids);	
+		
+		return count+" Record are Deleted..!";
+	}
+	
+	
+	@Override
+	public String deleteDoctorbyId(Integer id) 
+	{
+		
+		Optional<Doctor> opt = docRepo.findById(id);
+		if(opt.isPresent())
+		{
+			docRepo.deleteById(id);
+			return id+" id Doctor Deleted..!";
+		}
+		else
+		{
+			return id+" id Doctor is not found..!";
+		}
+	}
+	
 
 }

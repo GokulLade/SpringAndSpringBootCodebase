@@ -18,4 +18,9 @@ public interface IDoctorService {
 	//Update Operation
 	public String registerOrUpdateDoctor(Doctor doctor); //Full Object Modification
 	public String updateDoctorDetails(Integer id,Double newIncome,String newQly); //Partial Object Modification
+	
+	//Delete Operation
+	public String deleteAllDoctor();
+	public String deleteDoctorByIds(Iterable<Integer> ids);
+	public String deleteDoctorbyId(Integer id);
 }

@@ -1,9 +1,12 @@
 package com.nt.Runner;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import com.nt.entity.Doctor;
 import com.nt.service.IDoctorService;
 
 @Component
@@ -17,7 +20,7 @@ public class DoctorClassRunners implements CommandLineRunner {
 	{
 //		try {
 //			
-//			Doctor doctor= new Doctor("Gokul", "MD", 353434D);
+//			Doctor doctor= new Doctor("Gokul", "MD", 1003D);
 //			
 //			String msg=docService.registerDoctor(doctor);
 //			
@@ -44,23 +47,23 @@ public class DoctorClassRunners implements CommandLineRunner {
 		
 		
 //		
-//		try {
-//			
-//			//Storing Doctors in List
-//			List<Doctor> doctors=List.of(new Doctor("Ram","MD",3432323D),new Doctor("Shyam","MBBS",3432323D),new Doctor("Om","MD",344323D));
-//			
-//			
-//			//Passing List to Service class
-//			String msg = docService.registerDoctorsAsroup(doctors);
-//			
-//			//Printing Result
-//			System.out.println(msg);
-//			
-//		}
-//		catch(Exception e)
-//		{
-//			e.printStackTrace();
-//		}
+		try {
+			
+			//Storing Doctors in List
+			List<Doctor> doctors=List.of(new Doctor("Ganesh","MD",45000D),new Doctor("Vikram","MBBS",20000D),new Doctor("Ajay","MD",80000D));
+			
+			
+			//Passing List to Service class
+			String msg = docService.registerDoctorsAsroup(doctors);
+			
+			//Printing Result
+			System.out.println(msg);
+			
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 //		
 //		
 //		try {
@@ -198,18 +201,18 @@ public class DoctorClassRunners implements CommandLineRunner {
 //			e.printStackTrace();
 //		}
 		
-		
-		try {
-			
-			String msg = docService.deleteDoctorbyId(15);
-			
-			System.out.println(msg);
-			
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
+//		
+//		try {
+//			
+//			String msg = docService.deleteDoctorbyId(15);
+//			
+//			System.out.println(msg);
+//			
+//		}
+//		catch(Exception e)
+//		{
+//			e.printStackTrace();
+//		}
 		
 	}
 

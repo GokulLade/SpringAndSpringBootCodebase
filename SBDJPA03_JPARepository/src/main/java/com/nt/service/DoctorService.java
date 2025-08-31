@@ -38,26 +38,20 @@ public class DoctorService implements IDoctorService{
 		
 		Sort sort=Sort.by(ascOrder?Sort.Direction.ASC:Sort.Direction.DESC,props);
 		
-		List<Doctor> list = repo.findAll(example, sort);
-		
-		return list;
+		return repo.findAll(example, sort);
 	}
 	
 	
 	@Override
 	public Doctor showDoctorById(Integer id) 
 	{
-		Doctor doctor=repo.findById(id).orElseThrow(()-> new IllegalArgumentException("Invalid id"));
-		
-		return doctor;
+		return repo.findById(id).orElseThrow(()-> new IllegalArgumentException("Invalid id"));
 	}
 	
 	@Override
 	public Doctor fetchDoctorById(Integer id) 
 	{
-		Doctor doctor = repo.getReferenceById(id);
-		
-		return doctor;
+		return repo.getReferenceById(id);
 	}
 	
 }

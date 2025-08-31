@@ -9,5 +9,4 @@ import com.nt.entity.Doctor;
 public interface IDoctorRepository extends JpaRepository<Doctor, Integer> {
 
 	List<Doctor> findByQly(String docQly) throws Exception; // Default condition is equal
-
 }

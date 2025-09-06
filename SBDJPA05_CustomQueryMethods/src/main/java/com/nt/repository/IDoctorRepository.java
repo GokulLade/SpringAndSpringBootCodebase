@@ -48,4 +48,13 @@ public interface IDoctorRepository extends JpaRepository<Doctor, Integer> {
 	
 	@Query("Select income from Doctor where docName=:dName")
 	public Double getDoctorIncomeByName(String dName) throws Exception;
+	
+	/* ----------------------- Aggregate Operations --------------------------------------*/
+	@Query("Select distinct count")
+	public Long showUniqueDoctorCount();
+	
+	
+	
+	
+	
 }

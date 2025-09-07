@@ -9,6 +9,5 @@ public class Sbdjpa05CustomQueryMethods {
 	public static void main(String[] args) {
 		SpringApplication.run(Sbdjpa05CustomQueryMethods.class, args);
 	}
-
 }
 

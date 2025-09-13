@@ -1,0 +1,21 @@
+
+spring:
+  application:
+    name: SBDJPA07_DateAndTime_JODA_API
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///SPRINGBOOT01
+    username: root
+    password: 9112
+    #driver-class-name: oracle.jdbc.driver.OracleDriver
+    #url: jdbc:oracle:thin:@localhost:1521:orcl
+    #username: Gokul
+    #password: 9112
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        enable_lazy_no_trans: true

@@ -13,7 +13,6 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -26,7 +25,7 @@ import lombok.Setter;
 public class Person {
 
 	@Id
-	@SequenceGenerator(name="gen1", sequenceName = "P_ID", initialValue = 100, allocationSize = 1)
+	@SequenceGenerator(name = "gen1", sequenceName = "P_ID", initialValue = 100, allocationSize = 1)
 	@GeneratedValue(generator = "gen1", strategy = GenerationType.SEQUENCE)
 	private Integer pid;
 	@Column(length = 20)
@@ -35,16 +34,18 @@ public class Person {
 	@Column(length = 20)
 	@NonNull
 	private String paddr;
-	
+
 	@OneToMany(targetEntity = PhoneNumber.class, cascade = CascadeType.ALL, mappedBy = "person")
 //	@JoinColumn(name = "Person_ID" , referencedColumnName = "PID")
 	private Set<PhoneNumber> phones;
+
+	public Person() {
+		System.out.println("Person::Construtor"+this.getClass());
+	}
 
 	@Override
 	public String toString() {
 		return "Person [pid=" + pid + ", pname=" + pname + ", paddr=" + paddr + "]";
 	}
-	
-	
-	
+
 }

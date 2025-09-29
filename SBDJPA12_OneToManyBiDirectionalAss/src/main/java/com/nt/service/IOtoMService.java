@@ -11,4 +11,9 @@ public interface IOtoMService {
 	public String regPhoneNumberWithPerson(List<PhoneNumber> list);
 	public List<Person> loadPersonAndHisPhoneNumbers();
 	public List<PhoneNumber> loadPhoneNumberWithPerson();
+	public String deletePersonWithPhoneNumber(Integer id);
+	public String removePhoneOfAPerson(Integer id);
+	public String addNewPhoneNumberToPerson(Integer pid, PhoneNumber phNo);
+	public String removePhoneNumberAndPerson(Integer pid);
+	
 }

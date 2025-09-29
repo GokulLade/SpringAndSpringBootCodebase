@@ -1,13 +1,9 @@
 package com.nt.runner;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.nt.entity.Person;
-import com.nt.entity.PhoneNumber;
 import com.nt.service.IOtoMService;
 
 import jakarta.transaction.Transactional;
@@ -86,16 +82,44 @@ public class OtoMRunner implements CommandLineRunner {
 //		} catch (Exception e) {
 //			e.printStackTrace();
 //		}
+//		
+//		try {
+//			List<PhoneNumber> list = otomservice.loadPhoneNumberWithPerson();
+//			list.forEach(ph->{
+//				System.out.println("Child: "+ph);
+//				
+//				//Get Association parent
+//				Person per=ph.getPerson();
+//				System.out.println("Parent: "+per);
+//			});
+//			
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//		}
+//
+//		try {
+//
+//			String msg = otomservice.removePhoneOfAPerson(101);
+//			System.out.println(msg);
+//
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+
+//		try {
+//
+//			PhoneNumber newPhno = new PhoneNumber("Office", 2323232L, "JIO");
+//
+//			String msg = otomservice.addNewPhoneNumberToPerson(101, newPhno);
+//			System.out.println(msg);
+//
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 		
 		try {
-			List<PhoneNumber> list = otomservice.loadPhoneNumberWithPerson();
-			list.forEach(ph->{
-				System.out.println("Child: "+ph);
-				
-				//Get Association parent
-				Person per=ph.getPerson();
-				System.out.println("Parent: "+per);
-			});
+			String msg = otomservice.removePhoneNumberAndPerson(101);
+			System.out.println(msg);
 			
 		}catch(Exception e) {
 			e.printStackTrace();
